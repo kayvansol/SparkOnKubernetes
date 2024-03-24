@@ -1,4 +1,7 @@
 # Spark On Kubernetes
+![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/logo.png?raw=true)
+
+
 Spark On Kubernetes via **helm chart**
 
 The control-plane & worker nodes addresses are :
@@ -48,6 +51,8 @@ kubectl exec -it  kayvan-release-spark-master-0 -- /bin/bash
 ```
 
 ![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/Command.png?raw=true)
+
+![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/logo2.png?raw=true)
 
 ***
 3) The final **result** is 🍹 :
