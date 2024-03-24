@@ -25,3 +25,8 @@ $ helm install kayvan-release oci://registry-1.docker.io/bitnamicharts/spark
 the installed pods :
 
 ![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/Pods.png?raw=true)
+
+and Services (headless for statefull) :
+
+![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/Services.png?raw=true)
+
