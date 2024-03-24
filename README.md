@@ -46,3 +46,8 @@ kubectl exec -it  kayvan-release-spark-master-0 -- /bin/bash
 
 ![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/Command.png?raw=true)
 
+3) The final result is 🍹 :
+
+![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/Result.png?raw=true)
+
+![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/Completed.png?raw=true)
