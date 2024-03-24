@@ -16,3 +16,10 @@ Kubernetes cluster nodes :
 
 
 The Steps :
+1) Install spark via helm chart :
+```
+$ helm repo add bitnami https://charts.bitnami.com/bitnami
+$ helm search repo bitnami
+$ helm install kayvan-release oci://registry-1.docker.io/bitnamicharts/spark
+```
+
