@@ -22,6 +22,9 @@ you can install helm via the link [helm](https://helm.sh/docs/intro/install) :
 ***
 The Steps :
 1) Install spark via helm chart **(bitnami)** :
+
+<img src="https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/bitnami.png" width="500" height="200">
+   
 ```
 $ helm repo add bitnami https://charts.bitnami.com/bitnami
 $ helm search repo bitnami
