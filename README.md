@@ -26,7 +26,7 @@ The Steps :
 $ helm repo add bitnami https://charts.bitnami.com/bitnami
 $ helm search repo bitnami
 $ helm install kayvan-release oci://registry-1.docker.io/bitnamicharts/spark
-$ helm upgrade spark-release bitnami/spark --set worker.replicaCount=5
+$ helm upgrade kayvan-release bitnami/spark --set worker.replicaCount=5
 ```
 the installed **6 pods** :
 
