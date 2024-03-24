@@ -22,7 +22,7 @@ $ helm repo add bitnami https://charts.bitnami.com/bitnami
 $ helm search repo bitnami
 $ helm install kayvan-release oci://registry-1.docker.io/bitnamicharts/spark
 ```
-the installed **pods** :
+the installed **6 pods** :
 
 ![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/Pods.png?raw=true)
 
