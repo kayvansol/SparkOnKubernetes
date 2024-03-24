@@ -10,7 +10,7 @@ The control-plane & worker nodes addresses are :
 ![alt text](https://raw.githubusercontent.com/kayvansol/Ingress/main/pics/vmnet.png?raw=true)
 
 
-Kubernetes cluster nodes :
+Kubernetes cluster **nodes** :
 
 ![alt text](https://raw.githubusercontent.com/kayvansol/Ingress/main/pics/nodes.png?raw=true)
 
