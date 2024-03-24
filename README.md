@@ -30,3 +30,19 @@ and Services (headless for statefull) :
 
 ![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/Services.png?raw=true)
 
+and the spark master is :
+
+![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/Master.png?raw=true)
+
+2) type the below commands on kubernetes kube-apiserver :
+```
+kubectl exec -it  kayvan-release-spark-master-0 -- /bin/bash
+
+./bin/spark-submit \
+  --class org.apache.spark.examples.SparkPi \
+  --master spark://kayvan-release-spark-master-0.kayvan-release-spark-headless.default.svc.cluster.local:7077 \
+  ./examples/jars/spark-examples_2.12-3.4.1.jar 1000
+```
+
+![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/Command.png?raw=true)
+
