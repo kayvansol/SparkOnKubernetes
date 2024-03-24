@@ -14,6 +14,8 @@ Kubernetes cluster **nodes** :
 
 ![alt text](https://raw.githubusercontent.com/kayvansol/Ingress/main/pics/nodes.png?raw=true)
 
+you can install helm via the link [helm](https://helm.sh/docs/intro/install) :
+
 ***
 The Steps :
 1) Install spark via helm chart **(bitnami)** :
