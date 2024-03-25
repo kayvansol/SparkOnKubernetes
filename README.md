@@ -52,6 +52,13 @@ kubectl exec -it  kayvan-release-spark-master-0 -- /bin/bash
   --class org.apache.spark.examples.SparkPi \
   --master spark://kayvan-release-spark-master-0.kayvan-release-spark-headless.default.svc.cluster.local:7077 \
   ./examples/jars/spark-examples_2.12-3.4.1.jar 1000
+
+
+./bin/spark-submit \
+  --class org.apache.spark.examples.SparkPi \
+  --master spark://kayvan-release-spark-master-0.kayvan-release-spark-headless.default.svc.cluster.local:7077 \
+  ./examples/src/main/python/pi.py 1000
+
 ```
 
 ![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/Command.png?raw=true)
@@ -64,6 +71,12 @@ the exact scala code of spark-examples_2.12-3.4.1.jar :
 ***
 3) The final **result** is 🍹 :
 
+for scala :
+
 ![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/Result.png?raw=true)
+
+for python :
+
+![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/ResultPy.png?raw=true)
 
 ![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/Completed.png?raw=true)
