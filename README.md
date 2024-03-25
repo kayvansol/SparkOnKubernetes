@@ -59,6 +59,12 @@ kubectl exec -it  kayvan-release-spark-master-0 -- /bin/bash
   --master spark://kayvan-release-spark-master-0.kayvan-release-spark-headless.default.svc.cluster.local:7077 \
   ./examples/src/main/python/pi.py 1000
 
+
+./bin/spark-submit \
+  --class org.apache.spark.examples.SparkPi \
+  --master spark://kayvan-release-spark-master-0.kayvan-release-spark-headless.default.svc.cluster.local:7077 \
+  ./examples/src/main/python/wordcount.py //filepath
+
 ```
 
 ![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/Command.png?raw=true)
@@ -70,6 +76,9 @@ the exact **scala & python** code of spark-examples_2.12-3.4.1.jar & pi.py :
 [examples/src/main/scala/org/apache/spark/examples/SparkPi.scala](https://github.com/apache/spark/blob/master/examples/src/main/scala/org/apache/spark/examples/SparkPi.scala)
 
 [examples/src/main/python/pi.py](https://github.com/apache/spark/blob/master/examples/src/main/python/pi.py)
+
+[examples/src/main/python/wordcount.py](https://github.com/apache/spark/blob/master/examples/src/main/python/wordcount.py)
+
 ***
 
 3) The final **result** is 🍹 :
