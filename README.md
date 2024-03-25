@@ -65,17 +65,20 @@ kubectl exec -it  kayvan-release-spark-master-0 -- /bin/bash
 
 ![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/logo2.png?raw=true)
 
-the exact scala code of spark-examples_2.12-3.4.1.jar :
+the exact **scala & python** code of spark-examples_2.12-3.4.1.jar & pi.py :
 
 [examples/src/main/scala/org/apache/spark/examples/SparkPi.scala](https://github.com/apache/spark/blob/master/examples/src/main/scala/org/apache/spark/examples/SparkPi.scala)
+
+[examples/src/main/python/pi.py](https://github.com/apache/spark/blob/master/examples/src/main/python/pi.py)
 ***
+
 3) The final **result** is 🍹 :
 
-for scala :
+for **scala** :
 
 ![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/Result.png?raw=true)
 
-for python :
+for **python** :
 
 ![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/ResultPy.png?raw=true)
 
