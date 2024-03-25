@@ -46,6 +46,15 @@ and the **spark master** is :
 ***
 2) type the below commands on kubernetes kube-apiserver :
 ```
+kubectl exec -it  kayvan-release-spark-master-0 -- ./bin/spark-submit \
+  --class org.apache.spark.examples.SparkPi \
+  --master spark://kayvan-release-spark-master-0.kayvan-release-spark-headless.default.svc.cluster.local:7077 \
+  ./examples/jars/spark-examples_2.12-3.4.1.jar 1000
+
+```
+or
+
+```
 kubectl exec -it  kayvan-release-spark-master-0 -- /bin/bash
 
 ./bin/spark-submit \
