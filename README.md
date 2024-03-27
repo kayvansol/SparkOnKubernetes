@@ -104,7 +104,7 @@ for **python** :
 
 ***
 
-The other **python** Programm :
+The other **python** <img src="https://github.com/devicons/devicon/raw/master/icons/python/python-original.svg" title="Python" alt="Python" width="20" height="20" style="max-width: 100%;"> Programm :
 
 1) Copy **People.csv** (large file) inside spark worker pods :
 
