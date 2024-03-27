@@ -147,26 +147,26 @@ df2.show()
 ```
 ![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/ProgPy1.png?raw=true)
 
-3) copy readcsv.py file inside spark master pod :
+3) copy readcsv.py file inside spark **master** pod :
 ```
 kubectl cp readcsv.py kayvan-release-spark-master-0:/opt/bitnami/spark
 ```
 
-3) run the code :
+4) run the code :
 ```
 kubectl exec -it  kayvan-release-spark-master-0 -- ./bin/spark-submit   --class org.apache.spark.examples.SparkPi
       --master spark://kayvan-release-spark-master-0.kayvan-release-spark-headless.default.svc.cluster.local:7077 
         readcsv.py
 ```
 
-4) showing some data :
+5) showing some data :
 
 ![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/ProgPy2.png?raw=true)
 
-5) the next data result :
+6) the next result data:
 
 ![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/ProgPy3.png?raw=true)
 
-6) the time consuming for processing :
+7) the time consuming for processing :
 
 ![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/ProgPy4.png?raw=true)
