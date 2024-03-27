@@ -101,3 +101,60 @@ for **python** :
 ![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/ResultPy.png?raw=true)
 
 ![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/Completed.png?raw=true)
+
+***
+
+Other **python** Programm :
+
+1) Copy People.csv file into spark worker pods :
+
+![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/ProgPy0.png?raw=true)
+
+2) Write some python codes :
+```
+from pyspark.sql import SparkSession
+#from pyspark.sql.functions import sum
+from pyspark.context import SparkContext
+
+spark = SparkSession\
+            .builder\
+            .appName("Mahla")\
+            .getOrCreate()
+        
+
+sc = spark.sparkContext
+
+path = "people.csv"
+
+df = spark.read.options(delimiter=",", header=True).csv(path)
+
+df.show()
+
+#df.groupBy("Job Title").sum().show() 
+
+df.createOrReplaceTempView("Peopletable")
+df2 = spark.sql("select Sex, count(1) countsex, sum(Index) sex_sum " \
+                "from peopletable group by Sex")
+df2.show()
+
+#df.select(sum(df.Index)).show()
+```
+![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/ProgPy1.png?raw=true)
+
+3) run the code :
+```
+kubectl exec -it  kayvan-release-spark-master-0 -- ./bin/spark-submit   --class org.apache.spark.examples.SparkPi
+      --master spark://kayvan-release-spark-master-0.kayvan-release-spark-headless.default.svc.cluster.local:7077   readcsv.py
+```
+
+4) showing some data :
+
+![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/ProgPy2.png?raw=true)
+
+5) the next data result :
+
+![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/ProgPy3.png?raw=true)
+
+6) the time consuming for processing :
+
+![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/ProgPy4.png?raw=true)
