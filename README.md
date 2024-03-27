@@ -39,7 +39,7 @@ and **Services** (headless for statefull) :
 
 ![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/Services.png?raw=true)
 
-and the **spark master** is :
+and the **spark master ui** is :
 
 ![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/Master.png?raw=true)
 
