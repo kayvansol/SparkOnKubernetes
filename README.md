@@ -106,13 +106,13 @@ for **python** :
 
 The other **python** Programm :
 
-1) Copy People.csv file into spark worker pods :
+1) Copy **People.csv** (large file) inside spark worker pods :
 
 ![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/ProgPy0.png?raw=true)
 
 Note: you can download the file from [link](https://www.datablist.com/learn/csv/download-sample-csv-files)  
 
-2) Write some python codes :
+2) Write some python codes inside **readcsv.py** please :
 ```
 from pyspark.sql import SparkSession
 #from pyspark.sql.functions import sum
