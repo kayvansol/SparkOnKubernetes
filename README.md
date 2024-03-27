@@ -110,6 +110,10 @@ The other **python** <img src="https://github.com/devicons/devicon/raw/master/ic
 
 ![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/ProgPy0.png?raw=true)
 
+```
+kubectl cp people.csv kayvan-release-spark-worker-{x}:/opt/bitnami/spark
+```
+
 Note: you can download the file from [link](https://www.datablist.com/learn/csv/download-sample-csv-files)  
 
 2) Write some python codes inside **readcsv.py** please :
@@ -142,6 +146,11 @@ df2.show()
 #df.select(sum(df.Index)).show()
 ```
 ![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/ProgPy1.png?raw=true)
+
+3) copy readcsv.py file inside spark master pod :
+```
+kubectl cp readcsv.py kayvan-release-spark-master-0:/opt/bitnami/spark
+```
 
 3) run the code :
 ```
