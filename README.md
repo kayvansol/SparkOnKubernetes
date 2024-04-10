@@ -174,9 +174,56 @@ kubectl exec -it  kayvan-release-spark-master-0 -- ./bin/spark-submit   --class 
 ![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/ProgPy4.png?raw=true)
 
 ***
-The other **python** <img src="https://github.com/devicons/devicon/raw/master/icons/python/python-original.svg" title="Python" alt="Python" width="20" height="20" style="max-width: 100%;"> Programm :
+The other **python** <img src="https://github.com/devicons/devicon/raw/master/icons/python/python-original.svg" title="Python" alt="Python" width="20" height="20" style="max-width: 100%;"> Programm on **Docker Desktop** :
 
-python code :
+docker-compose.yml :
+```yaml
+version: '3.6'
+
+services:
+
+  spark:
+    container_name: spark
+    image: bitnami/spark:latest
+    environment:
+      - SPARK_MODE=master
+      - SPARK_RPC_AUTHENTICATION_ENABLED=no
+      - SPARK_RPC_ENCRYPTION_ENABLED=no
+      - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
+      - SPARK_SSL_ENABLED=no
+      - SPARK_USER=root   
+      - PYSPARK_PYTHON=/opt/bitnami/python/bin/python3
+    ports:
+      - 127.0.0.1:8081:8080
+
+  spark-worker:
+    image: bitnami/spark:latest
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark:7077
+      - SPARK_WORKER_MEMORY=2G
+      - SPARK_WORKER_CORES=2
+      - SPARK_RPC_AUTHENTICATION_ENABLED=no
+      - SPARK_RPC_ENCRYPTION_ENABLED=no
+      - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
+      - SPARK_SSL_ENABLED=no
+      - SPARK_USER=root
+      - PYSPARK_PYTHON=/opt/bitnami/python/bin/python3
+```
+```
+docker-compose up --scale spark-worker=2
+```
+
+![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/partition4.png?raw=true)
+
+copy required files to containers :
+
+for e.g.
+```bash
+docker cp file.csv spark-worker-1:/opt/bitnami/spark
+```
+
+python code on master :
 
 ```python
 from pyspark.sql import SparkSession
@@ -189,7 +236,8 @@ df.show()
 
 df.write.partitionBy('name').mode('overwrite').format('json').save('file_name.json')
 ```
-run the code :
+
+run the code on spark master docker container :
 ```bash
 ./bin/spark-submit --master spark://4f28330ce077:7077 csv/ctp.py
 ```
