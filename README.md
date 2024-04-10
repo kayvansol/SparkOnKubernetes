@@ -200,3 +200,7 @@ showing some data :
 and the seperated json files based on name partitioning :
 
 ![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/partition1.png?raw=true)
+
+data for name=kayvan :
+
+![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/partition3.png?raw=true)
