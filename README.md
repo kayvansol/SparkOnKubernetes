@@ -119,7 +119,7 @@ Notes:
 - you can also use a **nfs share folder** for read large csv file from it instead of copying it inside pods.
 
 2) Write some python codes inside **readcsv.py** please :
-```
+```python
 from pyspark.sql import SparkSession
 #from pyspark.sql.functions import sum
 from pyspark.context import SparkContext
@@ -172,3 +172,31 @@ kubectl exec -it  kayvan-release-spark-master-0 -- ./bin/spark-submit   --class 
 7) the time consuming for processing :
 
 ![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/ProgPy4.png?raw=true)
+
+***
+The other **python** <img src="https://github.com/devicons/devicon/raw/master/icons/python/python-original.svg" title="Python" alt="Python" width="20" height="20" style="max-width: 100%;"> Programm :
+
+python code :
+
+```python
+from pyspark.sql import SparkSession
+
+spark = SparkSession.builder.appName("Writingjson").getOrCreate()
+
+df = spark.read.option("header", True).csv("csv/file.csv").coalesce(2)
+
+df.show()
+
+df.write.partitionBy('name').mode('overwrite').format('json').save('file_name.json')
+```
+run the code :
+```bash
+./bin/spark-submit --master spark://4f28330ce077:7077 csv/ctp.py
+```
+showing some data :
+
+![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/partition2.png?raw=true)
+
+and the seperated json files based on name partitioning :
+
+![alt text](https://raw.githubusercontent.com/kayvansol/SparkOnKubernetes/main/img/partition1.png?raw=true)
